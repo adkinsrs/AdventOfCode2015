@@ -8,21 +8,37 @@ def main():
     right_paren = input_text.count(')')
     print "Answer 1 - " + str(left_paren - right_paren)
 
-    # To get Answer 2
-    floor_number = 0
+    # Shorter answer to Answer 1 (found on Reddit)
     floor_dict = {'(' : 1, ')' : -1}
-    pos = 1;    # List position
-    for i in input_text:
-        if floor_dict[i]:
-            floor_number += floor_dict[i]
-        else:
-            print "Umm... what?"
-            return
-        if floor_number < 0:
-            print "Answer 2 - " + str(pos)
-            return
-        else:
-            pos += 1
+    sum(floor_dict[i] for i in input_text)
+
+    # To get Answer 2
+    # floor_number = 0
+    # pos = 1;    # List position
+    # for i in input_text:
+    #    if floor_dict[i]:
+    #        floor_number += floor_dict[i]
+    #    else:
+    #        print "Umm... what?"
+    #        break
+    #    if floor_number < 0:
+    #        print "Answer 2 - " + str(pos)
+    #        break
+    #    else:
+    #        pos += 1
+
+    # Shorter answer to Answer 2
+    for i in range(len(input_text)):
+        floor_number = sum(floor_dict[x] for x in input_text[:i])
+        if floor_number == -1:
+            print "Answer 2 - " + str(i)
+            break
+
+    # Gonna try and build a generator ... new concept to me
+    # gen = (pos for pos,item in enumerate(input_text) if (floor_number += floor_dict[item]) >= 0)
+    # for i in gen:
+    #     print "Answer 2 - " + str(i+1)
+
 
 if __name__ == '__main__':
     main()
