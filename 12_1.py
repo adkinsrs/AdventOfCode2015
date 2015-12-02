@@ -6,7 +6,7 @@ def main():
     # To get Answer 1
     left_paren = input_text.count('(')
     right_paren = input_text.count(')')
-    print "Answer 1 - " + str(left_paren - right_paren)
+    print ("Answer 1 - ", str(left_paren - right_paren))
 
     # Shorter answer to Answer 1 (found on Reddit)
     floor_dict = {'(' : 1, ')' : -1}
@@ -22,7 +22,7 @@ def main():
     #        print "Umm... what?"
     #        break
     #    if floor_number < 0:
-    #        print "Answer 2 - " + str(pos)
+    #        print ("Answer 2 - ", + str(pos))
     #        break
     #    else:
     #        pos += 1
@@ -31,13 +31,8 @@ def main():
     for i in range(len(input_text)):
         floor_number = sum(floor_dict[x] for x in input_text[:i])
         if floor_number == -1:
-            print "Answer 2 - " + str(i)
+            print ("Answer 2 - ", str(i))
             break
-
-    # Gonna try and build a generator ... new concept to me
-    # gen = (pos for pos,item in enumerate(input_text) if (floor_number += floor_dict[item]) >= 0)
-    # for i in gen:
-    #     print "Answer 2 - " + str(i+1)
 
 
 if __name__ == '__main__':
