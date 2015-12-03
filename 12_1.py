@@ -27,7 +27,7 @@ def main():
     #    else:
     #        pos += 1
 
-    # Shorter answer to Answer 2
+    # Shorter answer to Answer 2 (by code length, not by complexity)
     for i in range(len(input_text)):
         floor_number = sum(floor_dict[x] for x in input_text[:i])
         if floor_number == -1:
