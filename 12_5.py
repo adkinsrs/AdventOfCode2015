@@ -57,7 +57,8 @@ def main():
 	file = sys.argv[1]
 	for line in open(file,'r'):
 		line = line.strip()
-		
+
+		# Regex would have worked but a) I got python slice practice and b) I would have done that in Perl	
 		answer1_list = [at_least_three_vowels(line), double_letter_present(line), bad_combos_present(line)]
 		for cmd in answer1_list:
 			if not cmd:
