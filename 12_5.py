@@ -1,5 +1,4 @@
 import sys
-import re
 
 vowels = 'aeiou'
 bad_combos = set(['ab', 'cd', 'pq', 'xy'])
