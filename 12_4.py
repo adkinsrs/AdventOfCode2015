@@ -10,8 +10,8 @@ def md5_to_hex(md5_str):
 	return h.hexdigest()
 
 def string2hex(string):
-	''' I thought I was converting the md5 string to hex in this way '''
-	''' Gave up so I'm using the 'hashlib' module instead '''
+	''' I thought I was supposed to convert the md5 string to hex in this way '''
+	''' ... was quite wrong '''
 	#return string.encode('hex')		# Hex encoding for this function removed in Python 3
 	# Convert to hex, and then make it readable
 	return str(binascii.hexlify(string.encode()), 'ascii')
@@ -19,25 +19,22 @@ def string2hex(string):
 def starts_with_zeroes(hex_md5, num_zeroes):
 	zero_str = '0' * num_zeroes
 	if hex_md5.startswith(zero_str):
+		# Alternatively 'if hex_md5[:num_zeroes] == zero_str`:
 		return True
 	else:
 		return False
 
 def get_md5_key(input, count):
 	key = input + str(count)
-
-	#if (count % 100000 == 0):
-	#	print (str(count))
-
-	#print("foo - ", string2hex("foo"))		
-	#print("abcdef609043 - ", md5_to_hex('abcdef609043'))
-	#print("pqrstuv1048970 - ", md5_to_hex('pqrstuv1048970'))
-	#break 
 	return md5_to_hex(key)
 
 def main():
 	count = 0
 	while True:
+		#print("abcdef609043 - ", md5_to_hex('abcdef609043'))
+		#print("pqrstuv1048970 - ", md5_to_hex('pqrstuv1048970'))
+		#break 
+
 		md5 = get_md5_key(input, count)
 		if (starts_with_zeroes(md5, 5)):
 			print ("Answer 1 - {0}".format(count))
