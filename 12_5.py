@@ -5,7 +5,6 @@ bad_combos = set(['ab', 'cd', 'pq', 'xy'])
 
 def at_least_three_vowels(string):
 	''' Nice strings have at least 3 vowels '''
-	count = 0
 	count = sum(string.count(v) for v in vowels)
 	if count >=3:
 		return True
