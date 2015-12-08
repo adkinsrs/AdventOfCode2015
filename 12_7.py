@@ -81,6 +81,10 @@ def main():
 		number = re.findall(r"\d+", direction)	# At this point don't know if it's a signal or a SHIFT num
 		command = re.findall("[A-Z]+", direction)
 
+		### IMPROVMENT ###
+		# All bit commands except NOT are space-delimited and have elements enclosing the command
+		# Could have treated the shift number the same as the wire string and tested for int/str
+
 		# Now make branching paths depending on a) num of wires, then b) direction
 		if len(input) == 0:	# direct assignment
 			circuits[wire] = int(number[0])
