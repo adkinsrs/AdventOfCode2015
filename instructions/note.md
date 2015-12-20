@@ -5,3 +5,5 @@ All of these will have the answer revealed, since I will have already completed 
 All references for puzzle input can be found in the 'files' directory
 
 I'm noting the instructions because I'm not sure if they will be archived or not and I'd rather have a copy in case I'd like to revisit the puzzles again (maybe in a different language, for example)
+
+There may be a chance that a few daily problems have not been solved, so they will be incomplete at Part 1, leaving Part 2 hidden
